@@ -1,0 +1,12 @@
+universe 	= docker
+docker_image	= ivanmtoroc/ubuntu-python3:2.0
+executable 	= /bin/bash
+arguments	= run.sh 	
+should_transfer_files   = YES
+transfer_input_files    = A.txt,B.txt,Matrix.py,run.sh
+when_to_transfer_output = ON_EXIT
+output                  = out.matrix.$(Process).txt
+error                   = err.matrix.$(Process).txt
+log                     = log.matrix.$(Process).txt
+queue 1
+
